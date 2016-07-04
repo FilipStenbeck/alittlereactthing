@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import Messages from './Messages.jsx'
+import Messages from '../components/message/Messages.jsx'
 
 const mapStateToProps = (state) => {
   return {
@@ -18,9 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const Container = connect(
+const MessageContainer = connect(
   mapStateToProps,
 	mapDispatchToProps
 )(Messages)
 
-export default Container
+export default MessageContainer
