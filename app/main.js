@@ -1,13 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
 import { createStore } from 'redux';
+import { Provider } from 'react-redux'
 
 import { reducer } from './reducer';
-import Container from './Container.jsx';
+import Container from './container';
 
-//Setup the store and initial values
-window.store = createStore(reducer);
-store.dispatch({ type: 'SET_HELLO_MESSAGE', payload: "hello" });
-store.dispatch({ type: 'SET_WORLD_MESSAGE', payload: "world" });
+//Setup the store and initial state of the app
+let store = createStore(reducer)
+store.dispatch({ type: 'SET_HELLO_MESSAGE', payload: "Hej" });
+store.dispatch({ type: 'SET_WORLD_MESSAGE', payload: "världen" });
 
-ReactDOM.render(<Container/>, document.getElementById('container'));
+//Save store on windows for easy access
+window.store = store;
+
+render(
+	<Provider store={store}>
+    <Container />
+  </Provider>,
+	document.getElementById('app')
+);
