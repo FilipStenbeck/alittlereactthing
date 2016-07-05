@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import Messages from '../components/message/Messages.jsx'
+import Messages from '../components/messages/Messages.jsx'
 
 import {
 	setHelloMsg,

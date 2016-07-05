@@ -1,4 +1,5 @@
 import React from 'react';
+import style from "./message.css";
 
 export default function Message(props) {
   const message  = props.message;
@@ -6,6 +7,6 @@ export default function Message(props) {
   if (!message) { return <noscript/>; }
 
   return (
-    <span>{message}</span>
+    <span className={style.message}>{message}</span>
   )
 };
