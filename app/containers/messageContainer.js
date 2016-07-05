@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 
+import { helloWorlds, helloRandom } from '../utils/translations'
 import Messages from '../components/messages/Messages.jsx'
 
 import {
@@ -15,10 +16,12 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     setMessage: () => {
-      dispatch(setHelloMsg('Hello'));
-			dispatch(setWorldMsg('world!'));
+			let languageCode = helloRandom();
+      dispatch(setHelloMsg(helloWorlds(languageCode)[0]));
+			dispatch(setWorldMsg(helloWorlds(languageCode)[1]));
     }
   }
 }
