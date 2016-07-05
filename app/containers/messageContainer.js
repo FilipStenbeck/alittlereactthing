@@ -2,6 +2,11 @@ import { connect } from 'react-redux'
 
 import Messages from '../components/message/Messages.jsx'
 
+import {
+	setHelloMsg,
+	setWorldMsg
+} from '../actions'
+
 const mapStateToProps = (state) => {
   return {
 		 hello: state.hello,
@@ -12,8 +17,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setMessage: () => {
-      dispatch({ type: 'SET_HELLO_MESSAGE', payload: "foo" });
-			dispatch({ type: 'SET_WORLD_MESSAGE', payload: "bar" });
+      dispatch(setHelloMsg('Hello'));
+			dispatch(setWorldMsg('world!'));
     }
   }
 }

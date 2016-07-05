@@ -12,7 +12,7 @@ export default class Messages extends React.Component {
         &nbsp;
         <Message message={this.props.world}/>
         <p>
-          <button onClick={this.props.setMessage}>Click on me</button>
+          <button onClick={this.props.setMessage}>Translate</button>
         </p>
       </div>
     )

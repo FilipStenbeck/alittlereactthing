@@ -3,15 +3,19 @@ import { render } from 'react-dom'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 
-import { reducer } from './reducers';
 import MessageContainer from './containers/messageContainer';
+import { reducer } from './reducers';
+import {
+	setHelloMsg,
+	setWorldMsg
+} from './actions'
 
 //Setup the store and initial state of the app
 let store = createStore(reducer)
-store.dispatch({ type: 'SET_HELLO_MESSAGE', payload: "Hej" });
-store.dispatch({ type: 'SET_WORLD_MESSAGE', payload: "världen!!" });
+store.dispatch(setHelloMsg('Hallå'));
+store.dispatch(setWorldMsg('världen!'));
 
-//Save store on windows for easy access
+//Save store on windows for easy access from the dev-tool  console
 window.store = store;
 
 render(
