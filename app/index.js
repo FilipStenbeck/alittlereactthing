@@ -2,8 +2,11 @@ import React from 'react';
 import { render } from 'react-dom'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
+import { Router, Route, hashHistory } from 'react-router'
 
 import MessageContainer from './containers/messageContainer';
+import About from './components/about/about.jsx';
+
 import { reducer } from './reducers';
 import {
 	setHelloMsg,
@@ -18,9 +21,13 @@ store.dispatch(setWorldMsg('världen!'));
 //Save store on windows for easy access from the dev-tool  console
 window.store = store;
 
+
 render(
 	<Provider store={store}>
-    <MessageContainer />
+		<Router history={hashHistory}>
+			<Route path="/" component={MessageContainer}/>
+			<Route path="/about/:name" component={About}/>
+    </Router>
   </Provider>,
 	document.getElementById('app')
 );
