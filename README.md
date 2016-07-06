@@ -30,3 +30,11 @@ Build a distribution
 ```sh
 npm run build
 ```
+
+Start
+======
+Start in production mode, using Express server
+
+```sh
+NODE_ENV=production npm start
+```
