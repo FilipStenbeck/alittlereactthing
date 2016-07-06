@@ -1,7 +1,17 @@
 A little react thing
 =======
 
-A tiny boilerplate-project for a react app using webpack
+A tiny boilerplate-project for a react/redux application.
+
+Includes
+======
+* React
+* Redux
+* React-router
+* Webpack
+* Babel
+* CSS modules
+* Express
 
 Install
 ======
