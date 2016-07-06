@@ -6,7 +6,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run prod || npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --colors --history-api-fallback",
+    "dev": "webpack-dev-server --progress --colors --content-base public --history-api-fallback",
     "build": "webpack",
     "prod": "webpack && node server.js"
   },

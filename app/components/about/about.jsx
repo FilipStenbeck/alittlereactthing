@@ -8,7 +8,7 @@ export default React.createClass({
 			<p>
 				<Link to="/">Home</Link>
 			</p>
-			<h2>About {this.props.params.name}</h2>
+			<h2>About {this.props.params.name}!</h2>
 			</div>
   }
 })
