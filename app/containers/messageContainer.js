@@ -11,12 +11,12 @@ import {
 const mapStateToProps = (state) => {
   return {
 		 hello: state.hello,
-		 world: state.world
+		 world: state.world,
+		 menu: (state.menu && state.menu.data && state.menu.data.length ) ? state.menu.data[0].attributes.header : []
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-
   return {
     setMessage: () => {
 			let languageCode = helloRandom();

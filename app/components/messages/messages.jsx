@@ -8,9 +8,15 @@ export default class Messages extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          <Link to="/about/Filip">About</Link>
-        </p>
+        <ul>
+        {this.props.menu.map(function(item, i) {
+          return  (
+            <li key={i}>
+              <a href={item.url}>{item.title}</a>
+            </li>
+            )
+        })}
+      </ul>
         <Message message={this.props.hello}/>
         &nbsp;
         <Message message={this.props.world}/>
