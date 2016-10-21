@@ -6,7 +6,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run prod || npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --colors --content-base public",
+    "dev": "webpack-dev-server --progress --colors --content-base public --history-api-fallback",
     "build": "webpack",
     "prod": "webpack && node server.js"
   },
@@ -15,12 +15,15 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "fetch": "^1.1.0",
     "if-env": "^1.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
