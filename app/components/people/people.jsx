@@ -7,6 +7,9 @@ import {
     beamDescription
   } from "./people.css";
 
+  const flatten = require('lodash.flatten');
+  const uniq = require('lodash.uniq');
+
 const Beam = (props) => {
   if (!props.model) { return (<noscript/>); }
   let { description, first_name, image, last_name, tags, title, ...other } = props.model;
@@ -32,9 +35,12 @@ const Beam = (props) => {
 
 export default class People extends React.Component {
   render() {
+    let tags = uniq(flatten(this.props.people.map((item) => item.tags)));
+    console.log(tags);
     return (
       <div className={people}>
         <h1>Konsulter</h1>
+
       	{this.props.people.map((item) => <Beam key={item.image} model={item}/>)}
       </div>
     )
