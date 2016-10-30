@@ -33,6 +33,8 @@ render(
 	<Provider store={store}>
 		<Router history={browserHistory}>
 			<Route path="/" component={PeopleContainer}/>
+			<Route path="/people" component={PeopleContainer}/>
+			<Route path="/people/:filter" component={PeopleContainer}/>
 			<Route path="/messages" component={MessageContainer}/>
 			<Route path="/about/:name" component={About}/>
     </Router>

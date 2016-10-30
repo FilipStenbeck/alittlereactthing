@@ -6,6 +6,8 @@ export const MENU_DATA_SUCCESS = 'MENU_DATA_SUCCESS';
 export const LOADING_PEOPLE= 'LOADING_PEOPLE';
 export const LOADING_PEOPLE_SUCCESS = 'LOADING_PEOPLE_SUCCESS';
 export const LOADING_PEOPLE_ERROR = 'LOADING_PEOPLE_ERROR';
+export const SET_NEW_FILTER = 'SET_NEW_FILTER';
+
 
 
 export function loadingPeople() {
@@ -43,6 +45,12 @@ export function fetchPeople() {
   };
 }
 
+export function setNewFilter(filter) {
+	return {
+		type: SET_NEW_FILTER,
+		payload: filter
+	};
+};
 
 export function setHelloMsg(payload) {
 	return {
