@@ -12,12 +12,12 @@ const Beam = (props) => {
   let { description, first_name, image, last_name, tags, title, ...other } = props.model;
 
   return (
-	  <div className={beam}>
-	    <div className={beamContainer}>
-	      <div>
+	     <div className={beam}>
+        <div className={"row"}>
+	      <div className={"column"}>
 	        <img className={beamImage} src={image} alt={first_name} title={title}/>
 	      </div>
-	      <div>
+	        <div className={"column"}>
 	        <h2>
 	          {first_name} {last_name}
 	        </h2>

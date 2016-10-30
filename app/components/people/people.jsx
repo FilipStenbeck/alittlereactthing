@@ -35,9 +35,9 @@ export default class People extends React.Component {
 
     return (
       <div>
-        <div>
-          <Filter tags={tags} onClick={this.props.setActiveFilter}/>
-        </div>
+
+        <Filter tags={tags} onClick={this.props.setActiveFilter}/>
+
         <div className={people}>
           <h1>Konsulter</h1>
         	{ beams.map((item) => (
