@@ -3,8 +3,7 @@ import { Link } from 'react-router'
 import {
   beam,
   beamContainer,
-  beamImage,
-  beamDescription
+  beamImage
 } from "./beam.css";
 
 const Beam = (props) => {
@@ -12,21 +11,21 @@ const Beam = (props) => {
   let { description, first_name, image, last_name, tags, title, ...other } = props.model;
 
   return (
-	     <div className={beam}>
-        <div className={"row"}>
-	      <div className={"column"}>
-	        <img className={beamImage} src={image} alt={first_name} title={title}/>
-	      </div>
-	        <div className={"column"}>
-	        <h2>
-	          {first_name} {last_name}
-	        </h2>
-	        <div className={beamDescription}>
-	          {description}
-	        </div>
-	      </div>
-	    </div>
-	  </div>
+
+  <div className={beam}>
+    <div className={"row " + beamContainer}>
+      <div className={"column column-40"}>
+        <img className={beamImage} src={image} alt={first_name} title={title}/>
+      </div>
+        <div className={"column column-60"}>
+        <h2>
+          {first_name} {last_name}
+        </h2>
+        {description}
+      </div>
+    </div>
+
+  </div>
 	 );
 }
 

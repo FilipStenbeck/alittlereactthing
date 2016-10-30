@@ -1,7 +1,5 @@
 .beamContainer {
-	display: flex;
-	margin: 20px;
-	justify-content: center
+	max-width: 900px;
 }
 
 .beam {
@@ -18,8 +16,4 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	border-radius: 120% 80% 120% 70%/180% 60% 80% 70%;
-}
-
-.beamDescription {
-	
 }
