@@ -1,53 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router'
+import Beam from '../beam/beam.jsx'
+import Filter from '../filter/filter.jsx'
+
 import {
-    filter,
-    filterLink,
-    people,
-    beam,
-    beamContainer,
-    beamImage,
-    beamDescription
-  } from "./people.css";
+  people
+} from "./people.css";
 
 const flatten = require('lodash.flatten');
 const uniq = require('lodash.uniq');
 const includes = require('lodash.includes')
 
-const Beam = (props) => {
-  if (!props.model) { return (<noscript/>); }
-  let { description, first_name, image, last_name, tags, title, ...other } = props.model;
-
-  return (
-    <div className={beam}>
-      <div className={beamContainer}>
-        <div>
-          <img className={beamImage} src={image} alt={first_name} title={title}/>
-        </div>
-        <div>
-          <h2>
-            {first_name} {last_name}
-          </h2>
-          <div className={beamDescription}>
-            {description}
-          </div>
-        </div>
-      </div>
-    </div>
-   );
-  }
-
-  const Filter = (props) => {
-    const buildRouteFromName = (name) => "/people/" + name.toLowerCase()
-    if (!props.tags) { return (<noscript/>); }
-    let tags = props.tags;
-    return (
-      <div className={filter}>
-        <a className={filterLink} key="alla" onClick={props.onClick} href={buildRouteFromName('alla')}>Alla</a>
-        {props.tags.map((tag) => <a className={filterLink} key={tag} onClick={props.onClick} href={buildRouteFromName(tag)}>{tag}</a>)}
-      </div>
-     );
-    }
 
 export default class People extends React.Component {
 
@@ -77,7 +40,9 @@ export default class People extends React.Component {
         </div>
         <div className={people}>
           <h1>Konsulter</h1>
-        	{beams.map((item) => <Beam key={item.image} model={item}/>)}
+        	{ beams.map((item) => (
+              <Beam key={item.image} model={item}/>)
+          )}
         </div>
       </div>
     )
