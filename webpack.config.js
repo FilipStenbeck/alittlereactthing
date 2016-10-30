@@ -1,9 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
   entry: './app/index.js',
   output: { path: __dirname + '/public', filename: 'bundle.js' },
+  plugins: [
+       new CopyWebpackPlugin([
+         { from: 'node_modules/milligram/dist/milligram.min.css', to: 'milligram.min.css' },
+       ])
+   ],
   module: {
     loaders: [
       {
