@@ -11,10 +11,10 @@ const Filter = (props) => {
   let tags = props.tags;
   return (
     <div className={"row"}>
-      <div class="column">
+
       <a className={filterLink} key="alla" onClick={props.onClick} href={buildRouteFromName('alla')}>Alla</a>
-      </div>
-      {props.tags.map((tag) => <div class="column"> <a className={filterLink} key={tag} onClick={props.onClick} href={buildRouteFromName(tag)}>{tag}</a> </div>)}
+
+      {props.tags.map((tag) =>  <a className={filterLink} key={tag} onClick={props.onClick} href={buildRouteFromName(tag)}>{tag}</a>)}
     </div>
    );
 }
