@@ -7,7 +7,7 @@ import {
 } from "./beam.css";
 
 const Beam = (props) => {
-  if (!props.model) { return (<noscript/>); }
+ if (!props.model) { return null; }
   let { description, first_name, image, last_name, tags, title, ...other } = props.model;
 
   return (

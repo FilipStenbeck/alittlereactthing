@@ -11,7 +11,6 @@ const flatten = require('lodash.flatten');
 const uniq = require('lodash.uniq');
 const includes = require('lodash.includes')
 
-
 export default class People extends React.Component {
 
   componentDidMount() {
@@ -20,15 +19,17 @@ export default class People extends React.Component {
   }
 
   render() {
-    let activeFilter = this.props.params.filter;
-    let tags = uniq(flatten(this.props.people.map((item) => item.tags)));
+	const { params, people } = this.props;
+    let activeFilter = params.filter;
+
+    let tags = uniq(flatten(people.map((item) => item.tags)));
     let beams = [];
 
     //if filter is active only render a beam that has a tag that matches the active filter
     if (!activeFilter || activeFilter === 'alla') {
-      beams = this.props.people;
+      beams = people;
     } else {
-      beams = this.props.people.filter((beam) => {
+      beams = people.filter((beam) => {
         return includes(beam.tags.map((tag) => tag.toLocaleLowerCase()), activeFilter);
       });
     }
