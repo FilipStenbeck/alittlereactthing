@@ -8,8 +8,6 @@ Includes
 * React
 * Redux
 * React-router
-* Webpack
-* Babel
 * CSS modules
 * Express
 
